@@ -13,10 +13,10 @@ public class TopCloudTechnology {
     public TopCloudTechnology(){
         list = new ArrayList<>();
         list.add(new CloudTechnology("OpenStack", "Infrastructure", 2010, 1));
-        list.add(new CloudTechnology("Cloud Foundry", "Platform", 2011, 2));
+        list.add(new CloudTechnology("CloudFoundry", "Platform", 2011, 2));
         list.add(new CloudTechnology("KVM", "Virtualization", 2007, 3));
         list.add(new CloudTechnology("Docker", "Virtualization", 2013, 4));
-        list.add(new CloudTechnology("Apache Mesos", "Infrastructure", 2012, 5));
+        list.add(new CloudTechnology("ApacheMesos", "Infrastructure", 2012, 5));
         list.add(new CloudTechnology("MongoDB", "Database", 2009, 6));
         list.add(new CloudTechnology("Puppet", "DevOps", 2005, 7));
         list.add(new CloudTechnology("Chef", "DevOps", 2009, 8));

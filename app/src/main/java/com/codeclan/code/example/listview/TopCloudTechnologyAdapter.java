@@ -1,14 +1,17 @@
 package com.codeclan.code.example.listview;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 /**
@@ -40,6 +43,21 @@ public class TopCloudTechnologyAdapter extends ArrayAdapter<CloudTechnology> {
 
         TextView year =  (TextView) listItemView.findViewById(R.id.year);
         year.setText(String.valueOf(currentCloudTechnology.getYear()));
+
+        ImageView image = (ImageView) listItemView.findViewById(R.id.company_logo);
+        String nameLogo = currentCloudTechnology.getName().toLowerCase();
+        try {
+            Class res = R.drawable.class;
+            Field field = res.getField(nameLogo);
+            int drawableId = field.getInt(null);
+            image.setImageResource(drawableId);
+        }
+        catch (Exception e) {
+            Log.e("MyTag", "Failure to get drawable id.", e);
+        }
+
+
+
 
         listItemView.setTag(currentCloudTechnology);
         return listItemView;
